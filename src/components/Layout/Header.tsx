@@ -5,14 +5,14 @@ interface Props {
 
 export default function Header({ onReportClick, totalReports }: Props) {
   return (
-    <header className="relative py-10 px-6">
+    <header className="relative py-8 px-6 md:px-10">
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <div>
+        <div className="md:pl-2">
           <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
             AI Intent Map
           </h1>
-          <p className="text-slate-400 text-sm md:text-base mt-2 max-w-lg leading-relaxed">
-            Explore how the world uses AI — not what people ask, but what they're <em className="text-slate-300">doing</em>.
+          <p className="text-slate-400 text-sm md:text-base mt-3 max-w-lg leading-relaxed">
+            See what people are actually building with AI worldwide — not just what they search for, but what they <em className="text-slate-300">create</em>.
             <br />
             <span className="text-slate-500 text-xs">Data from OWID, OECD, Stanford AI Index & community reports.</span>
           </p>
@@ -22,7 +22,7 @@ export default function Header({ onReportClick, totalReports }: Props) {
           onClick={onReportClick}
           className="self-start md:self-center inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium
             bg-cyan-500/15 text-cyan-400 border border-cyan-500/30
-            hover:bg-cyan-500/25 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all"
+            hover:bg-cyan-500/25 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all md:mr-2"
         >
           <span>+</span>
           Report Your AI Usage

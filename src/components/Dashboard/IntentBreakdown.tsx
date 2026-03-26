@@ -27,14 +27,14 @@ export default function IntentBreakdown({ data }: Props) {
     .sort((a, b) => b.value - a.value)
 
   return (
-    <div className="glow-card p-5">
-      <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">
+    <div className="glow-card p-6">
+      <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider mb-5">
         Global Intent Distribution
       </h3>
-      <div className="space-y-3">
+      <div className="space-y-4">
         {sorted.map(({ key, value, config }) => (
           <div key={key}>
-            <div className="flex justify-between items-center mb-1">
+            <div className="flex justify-between items-center mb-2">
               <span className="text-sm flex items-center gap-2">
                 <span>{config.icon}</span>
                 <span className="text-slate-200">{config.label}</span>

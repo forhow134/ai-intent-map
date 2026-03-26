@@ -32,19 +32,19 @@ export default function App() {
     <div className="min-h-screen flex flex-col">
       <Header onReportClick={() => setReportOpen(true)} totalReports={totalReports} />
 
-      <main className="flex-1 px-6 max-w-[1400px] mx-auto w-full">
+      <main className="flex-1 px-6 md:px-10 py-6 max-w-[1400px] mx-auto w-full">
         <StatsBar data={intentData} dataSource={dataSource} onDataSourceChange={setDataSource} />
 
-        <div className="mt-6 flex flex-col lg:flex-row gap-6">
+        <div className="mt-8 flex flex-col lg:flex-row gap-8">
           <div className="flex-1 min-w-0">
             {geoData && (
-              <div className="glow-card p-4 overflow-hidden">
+              <div className="glow-card p-5 overflow-hidden">
                 <WorldMap geoData={geoData} getRegionData={getRegionData} />
               </div>
             )}
           </div>
 
-          <div className="lg:w-80 space-y-4 shrink-0">
+          <div className="lg:w-80 space-y-5 shrink-0">
             <IntentBreakdown data={intentData} />
             <RegionRanking data={intentData} />
           </div>

@@ -40,22 +40,22 @@ export default function StatsBar({ data, dataSource, onDataSourceChange }: Props
   const modes: DataSourceMode[] = ['official', 'community', 'blended']
 
   return (
-    <div className="space-y-4">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <div className="space-y-5 px-2">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {stats.map(s => (
-          <div key={s.label} className="glow-card px-5 py-4 text-center">
+          <div key={s.label} className="glow-card px-5 py-5 text-center">
             <div className="text-lg font-semibold text-white truncate" title={s.value}>{s.value}</div>
-            <div className="text-xs text-slate-500 mt-1">{s.label}</div>
+            <div className="text-xs text-slate-500 mt-2">{s.label}</div>
           </div>
         ))}
       </div>
 
-      <div className="flex justify-center gap-1">
+      <div className="flex justify-center gap-2">
         {modes.map(mode => (
           <button
             key={mode}
             onClick={() => onDataSourceChange(mode)}
-            className={`px-4 py-1.5 text-xs rounded-full transition-all ${
+            className={`px-4 py-2 text-xs rounded-full transition-all ${
               dataSource === mode
                 ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/40'
                 : 'text-slate-500 hover:text-slate-300 border border-transparent'
