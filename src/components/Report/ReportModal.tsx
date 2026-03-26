@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { IntentGroup } from '../../types'
-import { INTENT_GROUPS, INTENT_GROUP_KEYS } from '../../data/intents'
+import { INTENT_GROUPS } from '../../data/intents'
 import { supabase, isSupabaseConfigured } from '../../lib/supabase'
 import CountrySelect from './CountrySelect'
 import IntentPicker from './IntentPicker'

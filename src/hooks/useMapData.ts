@@ -67,7 +67,7 @@ function blendData(official: RegionIntentData[], community: RegionIntentData[]):
     for (const key of Object.keys(distribution) as Array<keyof typeof distribution>) {
       distribution[key] = Math.round((distribution[key] / total) * 100)
     }
-    const topIntent = (Object.entries(distribution) as [typeof key, number][])
+    const topIntent = (Object.entries(distribution) as [string, number][])
       .sort((a, b) => b[1] - a[1])[0][0] as keyof typeof distribution
 
     return {
