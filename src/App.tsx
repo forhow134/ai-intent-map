@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Layout/Header'
 import Footer from './components/Layout/Footer'
 import WorldMap from './components/Map/WorldMap'
@@ -14,9 +14,11 @@ export default function App() {
   const { communityData, totalReports, refetch } = useUserReports()
   const [reportOpen, setReportOpen] = useState(false)
 
-  if (communityData.length > 0) {
-    updateCommunityData(communityData)
-  }
+  useEffect(() => {
+    if (communityData.length > 0) {
+      updateCommunityData(communityData)
+    }
+  }, [communityData, updateCommunityData])
 
   if (loading) {
     return (
