@@ -5,17 +5,17 @@
     "numericId": "840",
     "distribution": { "coding": 30, "creative": 16, "research": 22, "business": 20, "learning": 12 },
     "topIntent": "coding",
-    "volume": 92,
+    "volume": 98,
     "sources": ["OWID-Publications", "OECD-AI", "StackOverflow"]
   },
   {
-    "countryCode": "CAN",
-    "countryName": "Canada",
-    "numericId": "124",
-    "distribution": { "coding": 27, "creative": 15, "research": 25, "business": 19, "learning": 14 },
+    "countryCode": "CHN",
+    "countryName": "China",
+    "numericId": "156",
+    "distribution": { "coding": 28, "creative": 10, "research": 26, "business": 18, "learning": 18 },
     "topIntent": "coding",
-    "volume": 85,
-    "sources": ["OWID-Publications", "OECD-AI"]
+    "volume": 96,
+    "sources": ["OWID-Publications", "OECD-AI", "Stanford-AI-Index"]
   },
   {
     "countryCode": "GBR",
@@ -23,6 +23,24 @@
     "numericId": "826",
     "distribution": { "coding": 26, "creative": 17, "research": 24, "business": 20, "learning": 13 },
     "topIntent": "coding",
+    "volume": 91,
+    "sources": ["OWID-Publications", "OECD-AI"]
+  },
+  {
+    "countryCode": "CAN",
+    "countryName": "Canada",
+    "numericId": "124",
+    "distribution": { "coding": 27, "creative": 15, "research": 25, "business": 19, "learning": 14 },
+    "topIntent": "coding",
+    "volume": 89,
+    "sources": ["OWID-Publications", "OECD-AI"]
+  },
+  {
+    "countryCode": "KOR",
+    "countryName": "South Korea",
+    "numericId": "410",
+    "distribution": { "coding": 25, "creative": 13, "research": 30, "business": 20, "learning": 12 },
+    "topIntent": "research",
     "volume": 88,
     "sources": ["OWID-Publications", "OECD-AI"]
   },
@@ -32,89 +50,8 @@
     "numericId": "276",
     "distribution": { "coding": 22, "creative": 12, "research": 30, "business": 22, "learning": 14 },
     "topIntent": "research",
-    "volume": 82,
+    "volume": 87,
     "sources": ["OWID-Publications", "OECD-AI"]
-  },
-  {
-    "countryCode": "FRA",
-    "countryName": "France",
-    "numericId": "250",
-    "distribution": { "coding": 18, "creative": 24, "research": 21, "business": 22, "learning": 15 },
-    "topIntent": "creative",
-    "volume": 75,
-    "sources": ["OWID-Publications", "Checkpoint-AI"]
-  },
-  {
-    "countryCode": "ITA",
-    "countryName": "Italy",
-    "numericId": "380",
-    "distribution": { "coding": 16, "creative": 26, "research": 22, "business": 20, "learning": 16 },
-    "topIntent": "creative",
-    "volume": 68,
-    "sources": ["OWID-Publications"]
-  },
-  {
-    "countryCode": "ESP",
-    "countryName": "Spain",
-    "numericId": "724",
-    "distribution": { "coding": 17, "creative": 22, "research": 20, "business": 21, "learning": 20 },
-    "topIntent": "creative",
-    "volume": 65,
-    "sources": ["OWID-Publications"]
-  },
-  {
-    "countryCode": "JPN",
-    "countryName": "Japan",
-    "numericId": "392",
-    "distribution": { "coding": 24, "creative": 14, "research": 28, "business": 22, "learning": 12 },
-    "topIntent": "research",
-    "volume": 78,
-    "sources": ["OWID-Publications", "OECD-AI"]
-  },
-  {
-    "countryCode": "KOR",
-    "countryName": "South Korea",
-    "numericId": "410",
-    "distribution": { "coding": 25, "creative": 13, "research": 30, "business": 20, "learning": 12 },
-    "topIntent": "research",
-    "volume": 83,
-    "sources": ["OWID-Publications", "OECD-AI"]
-  },
-  {
-    "countryCode": "CHN",
-    "countryName": "China",
-    "numericId": "156",
-    "distribution": { "coding": 28, "creative": 10, "research": 26, "business": 18, "learning": 18 },
-    "topIntent": "coding",
-    "volume": 90,
-    "sources": ["OWID-Publications", "OECD-AI", "Stanford-AI-Index"]
-  },
-  {
-    "countryCode": "IND",
-    "countryName": "India",
-    "numericId": "356",
-    "distribution": { "coding": 30, "creative": 8, "research": 14, "business": 18, "learning": 30 },
-    "topIntent": "coding",
-    "volume": 80,
-    "sources": ["OWID-Publications", "Checkpoint-AI"]
-  },
-  {
-    "countryCode": "BRA",
-    "countryName": "Brazil",
-    "numericId": "076",
-    "distribution": { "coding": 18, "creative": 22, "research": 10, "business": 20, "learning": 30 },
-    "topIntent": "learning",
-    "volume": 76,
-    "sources": ["OWID-Publications", "Checkpoint-AI"]
-  },
-  {
-    "countryCode": "RUS",
-    "countryName": "Russia",
-    "numericId": "643",
-    "distribution": { "coding": 28, "creative": 12, "research": 20, "business": 14, "learning": 26 },
-    "topIntent": "coding",
-    "volume": 60,
-    "sources": ["OWID-Publications"]
   },
   {
     "countryCode": "AUS",
@@ -122,17 +59,71 @@
     "numericId": "036",
     "distribution": { "coding": 24, "creative": 16, "research": 28, "business": 18, "learning": 14 },
     "topIntent": "research",
-    "volume": 86,
+    "volume": 85,
     "sources": ["OWID-Publications", "OECD-AI"]
   },
   {
-    "countryCode": "NZL",
-    "countryName": "New Zealand",
-    "numericId": "554",
-    "distribution": { "coding": 22, "creative": 18, "research": 26, "business": 18, "learning": 16 },
+    "countryCode": "JPN",
+    "countryName": "Japan",
+    "numericId": "392",
+    "distribution": { "coding": 24, "creative": 14, "research": 28, "business": 22, "learning": 12 },
     "topIntent": "research",
-    "volume": 72,
-    "sources": ["OWID-Publications"]
+    "volume": 84,
+    "sources": ["OWID-Publications", "OECD-AI"]
+  },
+  {
+    "countryCode": "ISR",
+    "countryName": "Israel",
+    "numericId": "376",
+    "distribution": { "coding": 30, "creative": 14, "research": 24, "business": 22, "learning": 10 },
+    "topIntent": "coding",
+    "volume": 84,
+    "sources": ["OWID-Publications", "OECD-AI"]
+  },
+  {
+    "countryCode": "IND",
+    "countryName": "India",
+    "numericId": "356",
+    "distribution": { "coding": 30, "creative": 8, "research": 14, "business": 18, "learning": 30 },
+    "topIntent": "coding",
+    "volume": 83,
+    "sources": ["OWID-Publications", "Checkpoint-AI"]
+  },
+  {
+    "countryCode": "FRA",
+    "countryName": "France",
+    "numericId": "250",
+    "distribution": { "coding": 18, "creative": 24, "research": 21, "business": 22, "learning": 15 },
+    "topIntent": "creative",
+    "volume": 80,
+    "sources": ["OWID-Publications", "Checkpoint-AI"]
+  },
+  {
+    "countryCode": "NLD",
+    "countryName": "Netherlands",
+    "numericId": "528",
+    "distribution": { "coding": 22, "creative": 20, "research": 26, "business": 18, "learning": 14 },
+    "topIntent": "research",
+    "volume": 80,
+    "sources": ["OWID-Publications", "OECD-AI"]
+  },
+  {
+    "countryCode": "SWE",
+    "countryName": "Sweden",
+    "numericId": "752",
+    "distribution": { "coding": 22, "creative": 16, "research": 28, "business": 20, "learning": 14 },
+    "topIntent": "research",
+    "volume": 79,
+    "sources": ["OWID-Publications", "OECD-AI"]
+  },
+  {
+    "countryCode": "DNK",
+    "countryName": "Denmark",
+    "numericId": "208",
+    "distribution": { "coding": 22, "creative": 16, "research": 30, "business": 18, "learning": 14 },
+    "topIntent": "research",
+    "volume": 79,
+    "sources": ["OWID-Publications", "OECD-AI"]
   },
   {
     "countryCode": "SGP",
@@ -140,16 +131,61 @@
     "numericId": "702",
     "distribution": { "coding": 20, "creative": 12, "research": 22, "business": 32, "learning": 14 },
     "topIntent": "business",
-    "volume": 95,
+    "volume": 78,
     "sources": ["OWID-Publications", "Checkpoint-AI", "OECD-AI"]
   },
   {
-    "countryCode": "ARE",
-    "countryName": "UAE",
-    "numericId": "784",
-    "distribution": { "coding": 16, "creative": 14, "research": 18, "business": 36, "learning": 16 },
-    "topIntent": "business",
-    "volume": 93,
+    "countryCode": "FIN",
+    "countryName": "Finland",
+    "numericId": "246",
+    "distribution": { "coding": 24, "creative": 14, "research": 28, "business": 18, "learning": 16 },
+    "topIntent": "research",
+    "volume": 78,
+    "sources": ["OWID-Publications", "OECD-AI"]
+  },
+  {
+    "countryCode": "NOR",
+    "countryName": "Norway",
+    "numericId": "578",
+    "distribution": { "coding": 20, "creative": 16, "research": 28, "business": 22, "learning": 14 },
+    "topIntent": "research",
+    "volume": 77,
+    "sources": ["OWID-Publications", "Checkpoint-AI", "OECD-AI"]
+  },
+  {
+    "countryCode": "IRL",
+    "countryName": "Ireland",
+    "numericId": "372",
+    "distribution": { "coding": 26, "creative": 14, "research": 24, "business": 24, "learning": 12 },
+    "topIntent": "coding",
+    "volume": 77,
+    "sources": ["OWID-Publications", "Checkpoint-AI"]
+  },
+  {
+    "countryCode": "CHE",
+    "countryName": "Switzerland",
+    "numericId": "756",
+    "distribution": { "coding": 20, "creative": 12, "research": 34, "business": 22, "learning": 12 },
+    "topIntent": "research",
+    "volume": 76,
+    "sources": ["OWID-Publications", "OECD-AI"]
+  },
+  {
+    "countryCode": "TWN",
+    "countryName": "Taiwan",
+    "numericId": "158",
+    "distribution": { "coding": 28, "creative": 12, "research": 26, "business": 20, "learning": 14 },
+    "topIntent": "coding",
+    "volume": 76,
+    "sources": ["OWID-Publications"]
+  },
+  {
+    "countryCode": "BRA",
+    "countryName": "Brazil",
+    "numericId": "076",
+    "distribution": { "coding": 18, "creative": 22, "research": 10, "business": 20, "learning": 30 },
+    "topIntent": "learning",
+    "volume": 74,
     "sources": ["OWID-Publications", "Checkpoint-AI"]
   },
   {
@@ -158,53 +194,26 @@
     "numericId": "344",
     "distribution": { "coding": 18, "creative": 14, "research": 20, "business": 34, "learning": 14 },
     "topIntent": "business",
-    "volume": 82,
+    "volume": 73,
     "sources": ["OWID-Publications"]
   },
   {
-    "countryCode": "NGA",
-    "countryName": "Nigeria",
-    "numericId": "566",
-    "distribution": { "coding": 20, "creative": 10, "research": 6, "business": 16, "learning": 48 },
-    "topIntent": "learning",
-    "volume": 42,
+    "countryCode": "ARE",
+    "countryName": "UAE",
+    "numericId": "784",
+    "distribution": { "coding": 16, "creative": 14, "research": 18, "business": 36, "learning": 16 },
+    "topIntent": "business",
+    "volume": 72,
     "sources": ["OWID-Publications", "Checkpoint-AI"]
   },
   {
-    "countryCode": "KEN",
-    "countryName": "Kenya",
-    "numericId": "404",
-    "distribution": { "coding": 18, "creative": 8, "research": 6, "business": 18, "learning": 50 },
-    "topIntent": "learning",
-    "volume": 35,
-    "sources": ["OWID-Publications"]
-  },
-  {
-    "countryCode": "EGY",
-    "countryName": "Egypt",
-    "numericId": "818",
-    "distribution": { "coding": 16, "creative": 10, "research": 14, "business": 16, "learning": 44 },
-    "topIntent": "learning",
-    "volume": 40,
-    "sources": ["OWID-Publications"]
-  },
-  {
-    "countryCode": "NLD",
-    "countryName": "Netherlands",
-    "numericId": "528",
-    "distribution": { "coding": 22, "creative": 20, "research": 26, "business": 18, "learning": 14 },
+    "countryCode": "NZL",
+    "countryName": "New Zealand",
+    "numericId": "554",
+    "distribution": { "coding": 22, "creative": 18, "research": 26, "business": 18, "learning": 16 },
     "topIntent": "research",
-    "volume": 84,
-    "sources": ["OWID-Publications", "OECD-AI"]
-  },
-  {
-    "countryCode": "CHE",
-    "countryName": "Switzerland",
-    "numericId": "756",
-    "distribution": { "coding": 20, "creative": 12, "research": 34, "business": 22, "learning": 12 },
-    "topIntent": "research",
-    "volume": 90,
-    "sources": ["OWID-Publications", "OECD-AI"]
+    "volume": 70,
+    "sources": ["OWID-Publications"]
   },
   {
     "countryCode": "ISL",
@@ -212,52 +221,34 @@
     "numericId": "352",
     "distribution": { "coding": 22, "creative": 18, "research": 28, "business": 16, "learning": 16 },
     "topIntent": "research",
-    "volume": 74,
+    "volume": 68,
     "sources": ["OWID-Publications"]
   },
   {
-    "countryCode": "IRL",
-    "countryName": "Ireland",
-    "numericId": "372",
-    "distribution": { "coding": 26, "creative": 14, "research": 24, "business": 24, "learning": 12 },
+    "countryCode": "ITA",
+    "countryName": "Italy",
+    "numericId": "380",
+    "distribution": { "coding": 16, "creative": 26, "research": 22, "business": 20, "learning": 16 },
+    "topIntent": "creative",
+    "volume": 66,
+    "sources": ["OWID-Publications"]
+  },
+  {
+    "countryCode": "ESP",
+    "countryName": "Spain",
+    "numericId": "724",
+    "distribution": { "coding": 17, "creative": 22, "research": 20, "business": 21, "learning": 20 },
+    "topIntent": "creative",
+    "volume": 64,
+    "sources": ["OWID-Publications"]
+  },
+  {
+    "countryCode": "CZE",
+    "countryName": "Czech Republic",
+    "numericId": "203",
+    "distribution": { "coding": 26, "creative": 14, "research": 24, "business": 18, "learning": 18 },
     "topIntent": "coding",
-    "volume": 84,
-    "sources": ["OWID-Publications", "Checkpoint-AI"]
-  },
-  {
-    "countryCode": "PAK",
-    "countryName": "Pakistan",
-    "numericId": "586",
-    "distribution": { "coding": 26, "creative": 8, "research": 10, "business": 12, "learning": 44 },
-    "topIntent": "learning",
-    "volume": 38,
-    "sources": ["OWID-Publications"]
-  },
-  {
-    "countryCode": "VNM",
-    "countryName": "Vietnam",
-    "numericId": "704",
-    "distribution": { "coding": 30, "creative": 10, "research": 10, "business": 16, "learning": 34 },
-    "topIntent": "learning",
-    "volume": 48,
-    "sources": ["OWID-Publications"]
-  },
-  {
-    "countryCode": "IDN",
-    "countryName": "Indonesia",
-    "numericId": "360",
-    "distribution": { "coding": 22, "creative": 12, "research": 12, "business": 18, "learning": 36 },
-    "topIntent": "learning",
-    "volume": 50,
-    "sources": ["OWID-Publications"]
-  },
-  {
-    "countryCode": "PHL",
-    "countryName": "Philippines",
-    "numericId": "608",
-    "distribution": { "coding": 18, "creative": 14, "research": 8, "business": 22, "learning": 38 },
-    "topIntent": "learning",
-    "volume": 44,
+    "volume": 62,
     "sources": ["OWID-Publications"]
   },
   {
@@ -266,7 +257,25 @@
     "numericId": "616",
     "distribution": { "coding": 28, "creative": 14, "research": 20, "business": 18, "learning": 20 },
     "topIntent": "coding",
-    "volume": 62,
+    "volume": 60,
+    "sources": ["OWID-Publications"]
+  },
+  {
+    "countryCode": "RUS",
+    "countryName": "Russia",
+    "numericId": "643",
+    "distribution": { "coding": 28, "creative": 12, "research": 20, "business": 14, "learning": 26 },
+    "topIntent": "coding",
+    "volume": 58,
+    "sources": ["OWID-Publications"]
+  },
+  {
+    "countryCode": "CHL",
+    "countryName": "Chile",
+    "numericId": "152",
+    "distribution": { "coding": 18, "creative": 16, "research": 16, "business": 24, "learning": 26 },
+    "topIntent": "learning",
+    "volume": 52,
     "sources": ["OWID-Publications"]
   },
   {
@@ -279,12 +288,12 @@
     "sources": ["OWID-Publications"]
   },
   {
-    "countryCode": "CZE",
-    "countryName": "Czech Republic",
-    "numericId": "203",
-    "distribution": { "coding": 26, "creative": 14, "research": 24, "business": 18, "learning": 18 },
-    "topIntent": "coding",
-    "volume": 64,
+    "countryCode": "IDN",
+    "countryName": "Indonesia",
+    "numericId": "360",
+    "distribution": { "coding": 22, "creative": 12, "research": 12, "business": 18, "learning": 36 },
+    "topIntent": "learning",
+    "volume": 50,
     "sources": ["OWID-Publications"]
   },
   {
@@ -297,12 +306,21 @@
     "sources": ["OWID-Publications", "Checkpoint-AI"]
   },
   {
-    "countryCode": "CHL",
-    "countryName": "Chile",
-    "numericId": "152",
-    "distribution": { "coding": 18, "creative": 16, "research": 16, "business": 24, "learning": 26 },
+    "countryCode": "THA",
+    "countryName": "Thailand",
+    "numericId": "764",
+    "distribution": { "coding": 18, "creative": 16, "research": 12, "business": 24, "learning": 30 },
     "topIntent": "learning",
-    "volume": 52,
+    "volume": 50,
+    "sources": ["OWID-Publications"]
+  },
+  {
+    "countryCode": "VNM",
+    "countryName": "Vietnam",
+    "numericId": "704",
+    "distribution": { "coding": 30, "creative": 10, "research": 10, "business": 16, "learning": 34 },
+    "topIntent": "learning",
+    "volume": 48,
     "sources": ["OWID-Publications"]
   },
   {
@@ -333,66 +351,48 @@
     "sources": ["OWID-Publications"]
   },
   {
-    "countryCode": "THA",
-    "countryName": "Thailand",
-    "numericId": "764",
-    "distribution": { "coding": 18, "creative": 16, "research": 12, "business": 24, "learning": 30 },
+    "countryCode": "PHL",
+    "countryName": "Philippines",
+    "numericId": "608",
+    "distribution": { "coding": 18, "creative": 14, "research": 8, "business": 22, "learning": 38 },
     "topIntent": "learning",
-    "volume": 50,
+    "volume": 44,
     "sources": ["OWID-Publications"]
   },
   {
-    "countryCode": "TWN",
-    "countryName": "Taiwan",
-    "numericId": "158",
-    "distribution": { "coding": 28, "creative": 12, "research": 26, "business": 20, "learning": 14 },
-    "topIntent": "coding",
-    "volume": 82,
+    "countryCode": "NGA",
+    "countryName": "Nigeria",
+    "numericId": "566",
+    "distribution": { "coding": 20, "creative": 10, "research": 6, "business": 16, "learning": 48 },
+    "topIntent": "learning",
+    "volume": 42,
+    "sources": ["OWID-Publications", "Checkpoint-AI"]
+  },
+  {
+    "countryCode": "EGY",
+    "countryName": "Egypt",
+    "numericId": "818",
+    "distribution": { "coding": 16, "creative": 10, "research": 14, "business": 16, "learning": 44 },
+    "topIntent": "learning",
+    "volume": 40,
     "sources": ["OWID-Publications"]
   },
   {
-    "countryCode": "ISR",
-    "countryName": "Israel",
-    "numericId": "376",
-    "distribution": { "coding": 30, "creative": 14, "research": 24, "business": 22, "learning": 10 },
-    "topIntent": "coding",
-    "volume": 88,
-    "sources": ["OWID-Publications", "OECD-AI"]
+    "countryCode": "PAK",
+    "countryName": "Pakistan",
+    "numericId": "586",
+    "distribution": { "coding": 26, "creative": 8, "research": 10, "business": 12, "learning": 44 },
+    "topIntent": "learning",
+    "volume": 38,
+    "sources": ["OWID-Publications"]
   },
   {
-    "countryCode": "SWE",
-    "countryName": "Sweden",
-    "numericId": "752",
-    "distribution": { "coding": 22, "creative": 16, "research": 28, "business": 20, "learning": 14 },
-    "topIntent": "research",
-    "volume": 84,
-    "sources": ["OWID-Publications", "OECD-AI"]
-  },
-  {
-    "countryCode": "FIN",
-    "countryName": "Finland",
-    "numericId": "246",
-    "distribution": { "coding": 24, "creative": 14, "research": 28, "business": 18, "learning": 16 },
-    "topIntent": "research",
-    "volume": 85,
-    "sources": ["OWID-Publications", "OECD-AI"]
-  },
-  {
-    "countryCode": "DNK",
-    "countryName": "Denmark",
-    "numericId": "208",
-    "distribution": { "coding": 22, "creative": 16, "research": 30, "business": 18, "learning": 14 },
-    "topIntent": "research",
-    "volume": 87,
-    "sources": ["OWID-Publications", "OECD-AI"]
-  },
-  {
-    "countryCode": "NOR",
-    "countryName": "Norway",
-    "numericId": "578",
-    "distribution": { "coding": 20, "creative": 16, "research": 28, "business": 22, "learning": 14 },
-    "topIntent": "research",
-    "volume": 86,
-    "sources": ["OWID-Publications", "Checkpoint-AI", "OECD-AI"]
+    "countryCode": "KEN",
+    "countryName": "Kenya",
+    "numericId": "404",
+    "distribution": { "coding": 18, "creative": 8, "research": 6, "business": 18, "learning": 50 },
+    "topIntent": "learning",
+    "volume": 35,
+    "sources": ["OWID-Publications"]
   }
 ]
