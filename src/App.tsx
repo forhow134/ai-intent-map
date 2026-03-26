@@ -1,13 +1,22 @@
+import { useState } from 'react'
 import Header from './components/Layout/Header'
 import Footer from './components/Layout/Footer'
 import WorldMap from './components/Map/WorldMap'
 import StatsBar from './components/Dashboard/StatsBar'
 import IntentBreakdown from './components/Dashboard/IntentBreakdown'
 import RegionRanking from './components/Dashboard/RegionRanking'
+import ReportModal from './components/Report/ReportModal'
 import { useMapData } from './hooks/useMapData'
+import { useUserReports } from './hooks/useUserReports'
 
 export default function App() {
-  const { geoData, intentData, loading, getRegionData } = useMapData()
+  const { geoData, intentData, loading, getRegionData, dataSource, setDataSource, updateCommunityData } = useMapData()
+  const { communityData, totalReports, refetch } = useUserReports()
+  const [reportOpen, setReportOpen] = useState(false)
+
+  if (communityData.length > 0) {
+    updateCommunityData(communityData)
+  }
 
   if (loading) {
     return (
@@ -19,10 +28,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header onReportClick={() => setReportOpen(true)} totalReports={totalReports} />
 
       <main className="flex-1 px-6 max-w-[1400px] mx-auto w-full">
-        <StatsBar data={intentData} />
+        <StatsBar data={intentData} dataSource={dataSource} onDataSourceChange={setDataSource} />
 
         <div className="mt-6 flex flex-col lg:flex-row gap-6">
           <div className="flex-1 min-w-0">
@@ -41,6 +50,12 @@ export default function App() {
       </main>
 
       <Footer />
+
+      <ReportModal
+        open={reportOpen}
+        onClose={() => setReportOpen(false)}
+        onSubmitted={refetch}
+      />
     </div>
   )
 }

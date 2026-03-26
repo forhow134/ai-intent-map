@@ -21,7 +21,10 @@ export interface RegionIntentData {
   distribution: Record<IntentGroup, number>
   topIntent: IntentGroup
   volume: number
+  sources?: string[]
 }
+
+export type DataSourceMode = 'official' | 'community' | 'blended'
 
 export interface TooltipData {
   x: number

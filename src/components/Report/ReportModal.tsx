@@ -1,0 +1,149 @@
+import { useState } from 'react'
+import type { IntentGroup } from '../../types'
+import { INTENT_GROUPS, INTENT_GROUP_KEYS } from '../../data/intents'
+import { supabase, isSupabaseConfigured } from '../../lib/supabase'
+import CountrySelect from './CountrySelect'
+import IntentPicker from './IntentPicker'
+
+interface Props {
+  open: boolean
+  onClose: () => void
+  onSubmitted?: () => void
+}
+
+type Step = 'country' | 'intent' | 'done'
+
+export default function ReportModal({ open, onClose, onSubmitted }: Props) {
+  const [step, setStep] = useState<Step>('country')
+  const [country, setCountry] = useState('')
+  const [intent, setIntent] = useState<IntentGroup | null>(null)
+  const [subAction, setSubAction] = useState<string | null>(null)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  if (!open) return null
+
+  const reset = () => {
+    setStep('country')
+    setCountry('')
+    setIntent(null)
+    setSubAction(null)
+    setError(null)
+  }
+
+  const handleClose = () => {
+    reset()
+    onClose()
+  }
+
+  const handleSubmit = async () => {
+    if (!country || !intent) return
+
+    setSubmitting(true)
+    setError(null)
+
+    if (isSupabaseConfigured && supabase) {
+      const { error: err } = await supabase.from('user_reports').insert({
+        country_code: country,
+        intent,
+        sub_action: subAction,
+      })
+      if (err) {
+        setError('Failed to submit. Please try again.')
+        setSubmitting(false)
+        return
+      }
+    }
+
+    setSubmitting(false)
+    setStep('done')
+    onSubmitted?.()
+  }
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} />
+      <div className="relative glow-card w-full max-w-md p-6 animate-in fade-in zoom-in-95">
+        <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors text-lg"
+        >
+          x
+        </button>
+
+        <h2 className="text-xl font-semibold text-white mb-1">Report Your AI Usage</h2>
+        <p className="text-sm text-slate-400 mb-6">
+          Help us build a real picture of how the world uses AI.
+        </p>
+
+        {step === 'country' && (
+          <div className="space-y-4">
+            <CountrySelect value={country} onChange={setCountry} />
+            <button
+              onClick={() => country && setStep('intent')}
+              disabled={!country}
+              className="w-full py-2.5 rounded-lg text-sm font-medium transition-all
+                disabled:opacity-30 disabled:cursor-not-allowed
+                bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30"
+            >
+              Next
+            </button>
+          </div>
+        )}
+
+        {step === 'intent' && (
+          <div className="space-y-4">
+            <IntentPicker
+              selectedIntent={intent}
+              selectedAction={subAction}
+              onIntentChange={setIntent}
+              onActionChange={setSubAction}
+            />
+            {error && <p className="text-red-400 text-xs">{error}</p>}
+            <div className="flex gap-3">
+              <button
+                onClick={() => setStep('country')}
+                className="flex-1 py-2.5 rounded-lg text-sm text-slate-400 hover:text-white border border-white/10 transition-all"
+              >
+                Back
+              </button>
+              <button
+                onClick={handleSubmit}
+                disabled={!intent || submitting}
+                className="flex-1 py-2.5 rounded-lg text-sm font-medium transition-all
+                  disabled:opacity-30 disabled:cursor-not-allowed
+                  bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30"
+              >
+                {submitting ? 'Submitting...' : 'Submit'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {step === 'done' && (
+          <div className="text-center py-6">
+            <div className="text-3xl mb-3">
+              {intent && INTENT_GROUPS[intent].icon}
+            </div>
+            <p className="text-white font-medium mb-1">Thanks for reporting!</p>
+            <p className="text-sm text-slate-400 mb-4">
+              Your data helps make the map more accurate.
+            </p>
+            <button
+              onClick={handleClose}
+              className="px-6 py-2 rounded-lg text-sm text-cyan-400 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/30 transition-all"
+            >
+              Close
+            </button>
+          </div>
+        )}
+
+        {!isSupabaseConfigured && step !== 'done' && (
+          <p className="text-xs text-amber-500/70 mt-4 text-center">
+            Demo mode — Supabase not configured. Reports won't be saved.
+          </p>
+        )}
+      </div>
+    </div>
+  )
+}
