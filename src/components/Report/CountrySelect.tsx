@@ -43,12 +43,12 @@ export default function CountrySelect({ value, onChange }: Props) {
   const selectedName = COUNTRIES.find(c => c.code === value)?.name
 
   return (
-    <div className="relative">
-      <label className="block text-sm text-slate-400 mb-1.5">Your Country</label>
+    <div className="relative px-1">
+      <label className="block text-sm text-slate-400 mb-2 ml-1">Your Country</label>
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-left text-sm
+        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-left text-sm
           hover:border-white/20 transition-colors"
       >
         <span className={selectedName ? 'text-white' : 'text-slate-500'}>
@@ -58,14 +58,14 @@ export default function CountrySelect({ value, onChange }: Props) {
 
       {open && (
         <div className="absolute top-full left-0 right-0 mt-1 bg-slate-800 border border-white/10 rounded-lg shadow-xl z-10 max-h-60 overflow-hidden">
-          <div className="p-2 border-b border-white/5">
+          <div className="p-3 border-b border-white/5">
             <input
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search..."
               autoFocus
-              className="w-full px-2 py-1.5 bg-white/5 rounded text-sm text-white placeholder-slate-500 outline-none"
+              className="w-full px-3 py-2 bg-white/5 rounded text-sm text-white placeholder-slate-500 outline-none"
             />
           </div>
           <div className="overflow-y-auto max-h-48">
@@ -73,7 +73,7 @@ export default function CountrySelect({ value, onChange }: Props) {
               <button
                 key={c.code}
                 onClick={() => { onChange(c.code); setOpen(false); setSearch('') }}
-                className={`w-full px-3 py-2 text-left text-sm hover:bg-white/5 transition-colors ${
+                className={`w-full px-4 py-2.5 text-left text-sm hover:bg-white/5 transition-colors ${
                   value === c.code ? 'text-cyan-400' : 'text-slate-300'
                 }`}
               >
@@ -81,7 +81,7 @@ export default function CountrySelect({ value, onChange }: Props) {
               </button>
             ))}
             {filtered.length === 0 && (
-              <div className="px-3 py-4 text-sm text-slate-500 text-center">No match</div>
+              <div className="px-4 py-4 text-sm text-slate-500 text-center">No match</div>
             )}
           </div>
         </div>

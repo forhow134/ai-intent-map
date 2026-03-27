@@ -61,27 +61,29 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} />
-      <div className="relative glow-card w-full max-w-md p-8 animate-in fade-in zoom-in-95">
+      <div className="relative glow-card w-full max-w-md p-6 animate-in fade-in zoom-in-95">
         <button
           onClick={handleClose}
-          className="absolute top-5 right-5 text-slate-500 hover:text-white transition-colors text-lg leading-none"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-white transition-colors text-lg leading-none rounded-full hover:bg-white/5"
         >
           x
         </button>
 
-        <h2 className="text-xl font-semibold text-white mb-2">Report Your AI Usage</h2>
-        <p className="text-sm text-slate-400 mb-8 leading-relaxed">
-          Help us build a real picture of how the world uses AI.
-        </p>
+        <div className="text-center mb-6">
+          <h2 className="text-xl font-semibold text-white mb-2">Share Your AI Usage</h2>
+          <p className="text-sm text-slate-400 leading-relaxed">
+            Tell us how you use AI — it helps everyone see the bigger picture.
+          </p>
+        </div>
 
         {done ? (
-          <div className="text-center py-8">
+          <div className="text-center py-6">
             <div className="text-3xl mb-3">
               {intent && INTENT_GROUPS[intent].icon}
             </div>
-            <p className="text-white font-medium mb-1">Thanks for reporting!</p>
+            <p className="text-white font-medium mb-1">Thanks for sharing!</p>
             <p className="text-sm text-slate-400 mb-6">
-              Your data helps make the map more accurate.
+              Your input makes this map more useful.
             </p>
             <button
               onClick={handleClose}
@@ -91,7 +93,7 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
             </button>
           </div>
         ) : (
-          <div className="space-y-6">
+          <div className="space-y-5">
             <CountrySelect value={country} onChange={setCountry} />
 
             <IntentPicker

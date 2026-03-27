@@ -10,10 +10,10 @@ interface Props {
 
 export default function IntentPicker({ selectedIntent, selectedAction, onIntentChange, onActionChange }: Props) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-5 px-1">
       <div>
-        <label className="block text-sm text-slate-400 mb-2">Primary AI Usage</label>
-        <div className="grid grid-cols-2 gap-2">
+        <label className="block text-sm text-slate-400 mb-3 ml-1">What do you use AI for?</label>
+        <div className="grid grid-cols-2 gap-3">
           {INTENT_GROUP_KEYS.map(key => {
             const config = INTENT_GROUPS[key]
             const active = selectedIntent === key
@@ -21,7 +21,7 @@ export default function IntentPicker({ selectedIntent, selectedAction, onIntentC
               <button
                 key={key}
                 onClick={() => { onIntentChange(key); onActionChange(null) }}
-                className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm transition-all border ${
+                className={`flex items-center gap-2 px-3 py-3 rounded-lg text-sm transition-all border ${
                   active
                     ? 'border-cyan-500/50 bg-cyan-500/10 text-white'
                     : 'border-white/5 bg-white/5 text-slate-400 hover:border-white/15 hover:text-slate-200'
@@ -37,13 +37,13 @@ export default function IntentPicker({ selectedIntent, selectedAction, onIntentC
 
       {selectedIntent && (
         <div>
-          <label className="block text-sm text-slate-400 mb-2">Specific Action (optional)</label>
-          <div className="flex flex-wrap gap-1.5">
+          <label className="block text-sm text-slate-400 mb-3 ml-1">More specifically (optional)</label>
+          <div className="flex flex-wrap gap-2">
             {INTENT_GROUPS[selectedIntent].actions.map(action => (
               <button
                 key={action.key}
                 onClick={() => onActionChange(selectedAction === action.key ? null : action.key)}
-                className={`px-2.5 py-1 rounded-full text-xs transition-all border ${
+                className={`px-3 py-1.5 rounded-full text-xs transition-all border ${
                   selectedAction === action.key
                     ? 'border-cyan-500/50 bg-cyan-500/10 text-cyan-400'
                     : 'border-white/5 text-slate-500 hover:text-slate-300'
