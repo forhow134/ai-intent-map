@@ -47,7 +47,7 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
         sub_action: subAction,
       })
       if (err) {
-        setError('Failed to submit. Please try again.')
+        setError('Submission failed, please try again.')
         setSubmitting(false)
         return
       }
@@ -59,31 +59,29 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} />
-      <div className="relative glow-card w-full max-w-md p-8 animate-in fade-in zoom-in-95">
+      <div className="relative glow-card w-full max-w-md px-8 py-8 md:px-10 md:py-10 animate-in fade-in zoom-in-95">
         <button
           onClick={handleClose}
-          className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-white transition-colors text-lg leading-none rounded-full hover:bg-white/5"
+          className="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors text-lg leading-none"
         >
           x
         </button>
 
-        <div className="text-center mb-8">
-          <h2 className="text-xl font-semibold text-white mb-3">Share Your AI Usage</h2>
-          <p className="text-sm text-slate-400 leading-relaxed">
-            Tell us how you use AI — it helps everyone see the bigger picture.
-          </p>
-        </div>
+        <h2 className="text-xl font-semibold text-white mb-3">Share Your AI Usage</h2>
+        <p className="text-sm text-slate-400 mb-8 leading-relaxed">
+          Tell us how you use AI. Your input helps paint a clearer global picture.
+        </p>
 
         {done ? (
-          <div className="text-center py-6">
-            <div className="text-3xl mb-3">
+          <div className="text-center py-8">
+            <div className="text-3xl mb-4">
               {intent && INTENT_GROUPS[intent].icon}
             </div>
-            <p className="text-white font-medium mb-1">Thanks for sharing!</p>
-            <p className="text-sm text-slate-400 mb-6">
-              Your input makes this map more useful.
+            <p className="text-white font-medium mb-2">Thanks for sharing!</p>
+            <p className="text-sm text-slate-400 mb-8">
+              Your input makes the map more accurate.
             </p>
             <button
               onClick={handleClose}
@@ -93,7 +91,7 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
             </button>
           </div>
         ) : (
-          <div className="space-y-6">
+          <div className="space-y-7">
             <CountrySelect value={country} onChange={setCountry} />
 
             <IntentPicker
@@ -103,23 +101,21 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
               onActionChange={setSubAction}
             />
 
-            {error && <p className="text-red-400 text-xs px-1">{error}</p>}
+            {error && <p className="text-red-400 text-xs">{error}</p>}
 
-            <div className="pt-2">
-              <button
-                onClick={handleSubmit}
-                disabled={!country || !intent || submitting}
-                className="w-full py-3 rounded-lg text-sm font-medium transition-all
-                  disabled:opacity-30 disabled:cursor-not-allowed
-                  bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30"
-              >
-                {submitting ? 'Submitting...' : 'Submit'}
-              </button>
-            </div>
+            <button
+              onClick={handleSubmit}
+              disabled={!country || !intent || submitting}
+              className="w-full py-3 rounded-lg text-sm font-medium transition-all
+                disabled:opacity-30 disabled:cursor-not-allowed
+                bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30"
+            >
+              {submitting ? 'Submitting...' : 'Submit'}
+            </button>
 
             {!isSupabaseConfigured && (
               <p className="text-xs text-amber-500/70 text-center">
-                Demo mode — Supabase not configured. Reports won't be saved.
+                Demo mode: Supabase not configured, reports will not be saved.
               </p>
             )}
           </div>
