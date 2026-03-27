@@ -10,9 +10,9 @@ interface Props {
 
 export default function IntentPicker({ selectedIntent, selectedAction, onIntentChange, onActionChange }: Props) {
   return (
-    <div className="space-y-5 px-1">
+    <div className="space-y-5 px-2">
       <div>
-        <label className="block text-sm text-slate-400 mb-3 ml-1">What do you use AI for?</label>
+        <label className="block text-sm text-slate-400 mb-3">What do you use AI for?</label>
         <div className="grid grid-cols-2 gap-3">
           {INTENT_GROUP_KEYS.map(key => {
             const config = INTENT_GROUPS[key]
@@ -21,7 +21,7 @@ export default function IntentPicker({ selectedIntent, selectedAction, onIntentC
               <button
                 key={key}
                 onClick={() => { onIntentChange(key); onActionChange(null) }}
-                className={`flex items-center gap-2 px-3 py-3 rounded-lg text-sm transition-all border ${
+                className={`flex items-center gap-2 px-4 py-3 rounded-lg text-sm transition-all border ${
                   active
                     ? 'border-cyan-500/50 bg-cyan-500/10 text-white'
                     : 'border-white/5 bg-white/5 text-slate-400 hover:border-white/15 hover:text-slate-200'
@@ -37,7 +37,7 @@ export default function IntentPicker({ selectedIntent, selectedAction, onIntentC
 
       {selectedIntent && (
         <div>
-          <label className="block text-sm text-slate-400 mb-3 ml-1">More specifically (optional)</label>
+          <label className="block text-sm text-slate-400 mb-3">More specifically (optional)</label>
           <div className="flex flex-wrap gap-2">
             {INTENT_GROUPS[selectedIntent].actions.map(action => (
               <button

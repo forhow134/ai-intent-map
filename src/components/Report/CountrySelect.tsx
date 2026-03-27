@@ -43,8 +43,8 @@ export default function CountrySelect({ value, onChange }: Props) {
   const selectedName = COUNTRIES.find(c => c.code === value)?.name
 
   return (
-    <div className="relative px-1">
-      <label className="block text-sm text-slate-400 mb-2 ml-1">Your Country</label>
+    <div className="relative px-2">
+      <label className="block text-sm text-slate-400 mb-2">Your Country</label>
       <button
         type="button"
         onClick={() => setOpen(!open)}

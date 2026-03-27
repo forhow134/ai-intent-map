@@ -61,16 +61,16 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} />
-      <div className="relative glow-card w-full max-w-md p-6 animate-in fade-in zoom-in-95">
+      <div className="relative glow-card w-full max-w-md p-8 animate-in fade-in zoom-in-95">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-white transition-colors text-lg leading-none rounded-full hover:bg-white/5"
+          className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-white transition-colors text-lg leading-none rounded-full hover:bg-white/5"
         >
           x
         </button>
 
-        <div className="text-center mb-6">
-          <h2 className="text-xl font-semibold text-white mb-2">Share Your AI Usage</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-xl font-semibold text-white mb-3">Share Your AI Usage</h2>
           <p className="text-sm text-slate-400 leading-relaxed">
             Tell us how you use AI — it helps everyone see the bigger picture.
           </p>
@@ -93,7 +93,7 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
             </button>
           </div>
         ) : (
-          <div className="space-y-5">
+          <div className="space-y-6">
             <CountrySelect value={country} onChange={setCountry} />
 
             <IntentPicker
@@ -103,17 +103,19 @@ export default function ReportModal({ open, onClose, onSubmitted }: Props) {
               onActionChange={setSubAction}
             />
 
-            {error && <p className="text-red-400 text-xs">{error}</p>}
+            {error && <p className="text-red-400 text-xs px-1">{error}</p>}
 
-            <button
-              onClick={handleSubmit}
-              disabled={!country || !intent || submitting}
-              className="w-full py-3 rounded-lg text-sm font-medium transition-all
-                disabled:opacity-30 disabled:cursor-not-allowed
-                bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30"
-            >
-              {submitting ? 'Submitting...' : 'Submit'}
-            </button>
+            <div className="pt-2">
+              <button
+                onClick={handleSubmit}
+                disabled={!country || !intent || submitting}
+                className="w-full py-3 rounded-lg text-sm font-medium transition-all
+                  disabled:opacity-30 disabled:cursor-not-allowed
+                  bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30"
+              >
+                {submitting ? 'Submitting...' : 'Submit'}
+              </button>
+            </div>
 
             {!isSupabaseConfigured && (
               <p className="text-xs text-amber-500/70 text-center">
